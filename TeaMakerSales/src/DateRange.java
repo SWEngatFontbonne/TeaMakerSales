@@ -24,4 +24,8 @@ public class DateRange {
 	public void setEnd(Date end) {
 		this.end = end;
 	}
+
+	boolean includes(Date date) {
+		return date.equals(getStart()) || date.equals(getEnd()) || (date.after(getStart()) && date.before(getEnd()));
+	}
 }
